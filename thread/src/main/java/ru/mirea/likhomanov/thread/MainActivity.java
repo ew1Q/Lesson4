@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
                     public void run() {
                         int numberThread = counter++;
                         Log.d("ThreadProject", String.format("Запущен поток № %d студентом группы БСБО-07-21 номер по " +
-                                "списку 14 ", numberThread, "БСБО-07-21"));
+                                "списку 14 ", numberThread, "БСБО-07-21", -1));
                         long endTime = System.currentTimeMillis() + 20 * 1000;
                         while (System.currentTimeMillis() < endTime) {
                             synchronized (this) {
@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
                                     throw new RuntimeException(e);
                                 }
                             }
-                            Log.d("ThreadProject", "Выполнился поток № " + numberThread);
+                            Log.d("ThreadProject", "Выполнен поток № " + numberThread);
                         }
                     }
                 }).start();
@@ -48,6 +48,5 @@ public class MainActivity extends AppCompatActivity {
         mainThread.setName("\nНомер моей группы: БСБО-07-21, \nМой номер по списку: 14, \nМой любимый фильм: Джентельмены");
         binding.textView1.append("\nНовое имя потока: " + mainThread.getName());
         Log.d(MainActivity.class.getSimpleName(), "Stack: " + Arrays.toString(mainThread.getStackTrace()));
-
     }
 }
