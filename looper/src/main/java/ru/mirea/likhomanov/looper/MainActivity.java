@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.Looper;
 import android.os.Message;
 import android.util.Log;
 import android.view.View;
@@ -19,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        Handler mainThreadHandler = new Handler(Looper.getMainLooper()) {
+        Handler mainThreadHandler = new Handler(android.os.Looper.getMainLooper()) {
             @Override
             public void handleMessage(Message msg) {
 
@@ -28,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         };
-        MyLooper myLooper = new MyLooper(mainThreadHandler);
+        Looper myLooper = new Looper(mainThreadHandler);
         myLooper.start();
 
         binding.editText.setText("Мой номер по списку № 14");

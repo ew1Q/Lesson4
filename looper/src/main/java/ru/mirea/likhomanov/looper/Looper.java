@@ -2,20 +2,19 @@ package ru.mirea.likhomanov.looper;
 
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.Looper;
 import android.os.Message;
 import android.util.Log;
 
-public class MyLooper extends Thread{
+public class Looper extends Thread{
     public Handler mHandler;
     private Handler mainHandler;
-    public MyLooper(Handler mainThreadHandler) {
+    public Looper(Handler mainThreadHandler) {
         mainHandler =mainThreadHandler;
     }
     public void run() {
         Log.d("MyLooper", "run");
-        Looper.prepare();
-        mHandler = new Handler(Looper.myLooper()) {
+        android.os.Looper.prepare();
+        mHandler = new Handler(android.os.Looper.myLooper()) {
             public void handleMessage(Message msg) {
                 String data = msg.getData().getString("KEY");
                 Log.d("MyLooper get message: ", data);
@@ -27,6 +26,6 @@ public class MyLooper extends Thread{
                 mainHandler.sendMessage(message);
             }
         };
-        Looper.loop();
+        android.os.Looper.loop();
     }
 }
