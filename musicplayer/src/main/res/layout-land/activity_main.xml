@@ -103,11 +103,13 @@
         android:id="@+id/imageButton5"
         android:layout_width="68dp"
         android:layout_height="69dp"
+        android:layout_marginStart="93dp"
         android:layout_marginTop="300dp"
         android:layout_marginEnd="44dp"
         android:layout_marginBottom="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageButton"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:drawable/ic_menu_share" />
 
