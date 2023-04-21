@@ -17,6 +17,7 @@
             <option value="$PROJECT_DIR$/musicplayer" />
             <option value="$PROJECT_DIR$/service_app" />
             <option value="$PROJECT_DIR$/thread" />
+            <option value="$PROJECT_DIR$/work_manager" />
           </set>
         </option>
       </GradleProjectSettings>
