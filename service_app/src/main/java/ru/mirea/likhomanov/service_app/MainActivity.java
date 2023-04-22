@@ -49,11 +49,18 @@ public class MainActivity extends AppCompatActivity {
                 if (play == false) {
                     play = true;
                     binding.button3.setImageResource(android.R.drawable.ic_media_pause);
+                    binding.textView1.setText("Полчаса");
+                    binding.textView2.setText("Velial Squad");
+                    binding.image.setImageResource(R.drawable.velials);
+
                     Intent serviceIntent = new Intent(MainActivity.this, PlayerService.class);
                     ContextCompat.startForegroundService(MainActivity.this, serviceIntent);
                 } else {
                     stopService(new Intent(MainActivity.this, PlayerService.class));
                     binding.button3.setImageResource(android.R.drawable.ic_media_play);
+                    binding.textView1.setText("SongName");
+                    binding.textView2.setText("GroupName");
+                    binding.image.setImageResource(R.drawable.ym);
                     play = false;
                 }
             }
